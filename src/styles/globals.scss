@@ -1,0 +1,120 @@
+:root {
+  --container: 1200px;
+  --border-radius: 12px;
+
+  --point-color: #111;
+  --base-color: #999;
+  --black-color: #111;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 50px 50px;
+  width: 320px;
+  height: 100%;
+  background: #fff;
+  box-sizing: border-box;
+
+  .header__logo {
+    a {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--black-color);
+
+      .header__logo-icon {
+        margin-bottom: 8px;
+        display: block;
+        font-size: 50px;
+      }
+    }
+  }
+
+  .header__category {
+    margin-top: 100px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 50px;
+      font-size: 16px;
+
+      // background: #999;
+      color: #999;
+      // border-radius: var(--border-radius);
+
+      &:hover {
+        font-weight: 600;
+        color: var(--black-color);
+        svg {
+          stroke: var(--black-color);
+        }
+      }
+    }
+
+    .header__category--active {
+      font-weight: 600;
+      color: var(--black-color);
+
+      svg {
+        stroke: var(--black-color);
+      }
+    }
+  }
+}
+// .header {
+//   display: flex;
+//   height: 65px;
+//   align-items: center;
+//   justify-content: space-between;
+
+//   div {
+//     display: flex;
+//     align-items: center;
+//     .header__logo {
+//       a {
+//         font-size: 20px;
+//         font-weight: 800;
+//         color: var(--point-color);
+
+//         .header__logo-icon {
+//           display: inline-block;
+//           margin-right: 10px;
+//           font-size: 28px;
+//           vertical-align: middle;
+//         }
+//       }
+//     }
+
+//     .header__category {
+//       margin-left: 80px;
+
+//       a {
+//         margin: 0 20px;
+//         padding: 8px 0;
+//         font-size: 14px;
+//         font-weight: bold;
+//         color: var(--point-color);
+//       }
+
+//       .header__category--active {
+//         border-bottom: 2px solid #000;
+//       }
+//     }
+//   }
+
+//   .header__theme {
+//     justify-content: center;
+//     width: 40px;
+//     height: 40px;
+//     border-radius: 30px;
+//     transition: 0.3s;
+
+//     .header__theme-btn {
+//       width: 18px;
+//       height: 18px;
+//     }
+//   }
+// }
