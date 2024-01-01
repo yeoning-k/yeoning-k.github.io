@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import Link from 'next/link';
-import { Noto_Sans_KR } from 'next/font/google';
+import { Roboto_Mono } from 'next/font/google';
 import { FiFile, FiFolder, FiUser, FiSun, FiMoon } from 'react-icons/fi';
 
-const notoSans_KR = Noto_Sans_KR({ subsets: ['latin'] });
+const roboto = Roboto_Mono({ subsets: ['latin'], weight: ['700'] });
 
 interface CategoryType {
   name: string;
@@ -13,12 +13,12 @@ interface CategoryType {
 const categoryItems: CategoryType[] = [
   {
     name: 'Blog',
-    link: '/blog',
+    link: '/blog/list',
     icon: <FiFile stroke="#999" />
   },
   {
     name: 'Project',
-    link: '/work',
+    link: '/work/list',
     icon: <FiFolder stroke="#999" />
   },
   {
@@ -30,13 +30,14 @@ const categoryItems: CategoryType[] = [
 
 export default function Header() {
   return (
-    <header className={`header ${notoSans_KR.className}`}>
-      <h1 className="header__logo">
+    <header className={`header`}>
+      <h1 className={`header__logo  ${roboto.className}`}>
         <Link href="/">
           <span className="header__logo-icon">👩🏼‍💻</span>
           yeon.log
         </Link>
       </h1>
+      <p className="header__description">made by yeoning</p>
       <div className="header__category">
         {categoryItems?.map((item, idx) => {
           const { name, link, icon } = item;
