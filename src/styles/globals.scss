@@ -1,11 +1,16 @@
 :root {
   --container: 1200px;
-  --border-radius: 12px;
+  --border-radius: 8px;
 
-  --point-color: #111;
-  --base-color: #999;
+  --point-color: #9cbad9;
+  --base-color: #f7f7fa;
+  --white-color: #fff;
+  --border-color: #eee;
+  --gray-color: #999;
   --black-color: #111;
 }
+
+/* ===== HEADER ===== */
 .header {
   position: fixed;
   top: 0;
@@ -13,7 +18,7 @@
   padding: 50px 50px;
   width: 320px;
   height: 100%;
-  background: #fff;
+  background: var(--white-color);
   box-sizing: border-box;
 
   .header__logo {
@@ -25,9 +30,15 @@
       .header__logo-icon {
         margin-bottom: 8px;
         display: block;
-        font-size: 50px;
+        font-size: 46px;
       }
     }
+  }
+
+  .header__description {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--gray-color);
   }
 
   .header__category {
@@ -64,57 +75,44 @@
     }
   }
 }
-// .header {
-//   display: flex;
-//   height: 65px;
-//   align-items: center;
-//   justify-content: space-between;
+/* ===== //HEADER ===== */
 
-//   div {
-//     display: flex;
-//     align-items: center;
-//     .header__logo {
-//       a {
-//         font-size: 20px;
-//         font-weight: 800;
-//         color: var(--point-color);
+/* ===== LAYOUT ===== */
+#container {
+  padding: 50px;
+  margin-left: 320px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background: var(--base-color);
+}
+.contents {
+  margin: 50px 0;
 
-//         .header__logo-icon {
-//           display: inline-block;
-//           margin-right: 10px;
-//           font-size: 28px;
-//           vertical-align: middle;
-//         }
-//       }
-//     }
+  .contents__title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
 
-//     .header__category {
-//       margin-left: 80px;
+.flex-box {
+  display: flex;
+  align-items: center;
+}
 
-//       a {
-//         margin: 0 20px;
-//         padding: 8px 0;
-//         font-size: 14px;
-//         font-weight: bold;
-//         color: var(--point-color);
-//       }
-
-//       .header__category--active {
-//         border-bottom: 2px solid #000;
-//       }
-//     }
-//   }
-
-//   .header__theme {
-//     justify-content: center;
-//     width: 40px;
-//     height: 40px;
-//     border-radius: 30px;
-//     transition: 0.3s;
-
-//     .header__theme-btn {
-//       width: 18px;
-//       height: 18px;
-//     }
-//   }
-// }
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.ml-10 {
+  margin-left: 10px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+/* ===== //LAYOUT ===== */

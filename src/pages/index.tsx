@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { Roboto_Mono } from 'next/font/google';
-
-const roboto = Roboto_Mono({ subsets: ['latin'] });
+import BlogList from '@/components/BlogList';
 
 export default function Home() {
   return (
@@ -11,7 +9,17 @@ export default function Home() {
         <title>YEON LOG</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className={`flex min-h-screen flex-col items-center justify-between p-24 ${roboto.className}`}></main>{' '}
+      <main>
+        <div className="contents">
+          <h1 className="contents__title">Toy Project</h1>
+        </div>
+        <div className="contents">
+          <h1 className="contents__title">Blog</h1>
+          <div>
+            <BlogList />
+          </div>
+        </div>
+      </main>
     </>
   );
 }
