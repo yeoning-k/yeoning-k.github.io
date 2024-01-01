@@ -1,12 +1,12 @@
 ---
-Title: 타입 정의
-Publish Date: 2024-01-01 16:46:01
-Modify Date:
-Categories: []
-Tags: [typesciprt]
-Slug:
-Thumbnail:
-Description:
+title: 타입 정의
+createDate: 24년 01월 01일 22:18:24
+modifyDate:
+categories: []
+tags: [typesciprt]
+slug: 20231213_typeannotation
+thumbnail:
+description:
 ---
 
 # 타입 정의

@@ -1,12 +1,12 @@
 ---
-Title: 인터페이스
-Publish Date: 2024-01-01 16:35:00
-Modify Date:
-Categories: []
-Tags: [typescript, test]
-Slug:
-Thumbnail:
-Description:
+title: 인터페이스
+createDate: 24년 01월 01일 21:32:44
+modifyDate:
+categories: []
+tags: [typescript, test]
+slug: 20231214_interface
+thumbnail:
+description:
 ---
 
 # 인터페이스
