@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import Link from 'next/link';
 import { Roboto_Mono } from 'next/font/google';
 import { FiFile, FiFolder, FiUser, FiSun, FiMoon } from 'react-icons/fi';
