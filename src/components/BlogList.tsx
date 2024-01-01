@@ -1,20 +1,29 @@
+import { PostProps } from '@/_interface/posts';
 import styles from '@/styles/Component.module.scss';
+import Link from 'next/link';
+import { FiCalendar } from 'react-icons/fi';
 
-const BlogList = () => {
-  const posts = [1, 2, 3, 4, 5];
+const BlogList = ({ posts }: { posts: PostProps[] }) => {
   return posts?.map((item, idx) => {
+    const { id, title, tags, description, date } = item;
+
     return (
       <div className={`mt-10 mb-10 ${styles.card}`} key={idx}>
-        <div className={`${styles.cart_tags}`}>
-          <span>typescript</span>
-          <span>next js</span>
-        </div>
-        <div className={`${styles.card_title}`}>타입 정의</div>
-        <div className={`${styles.card_text}`}>
-          타입스크립트는 변수와 함수에 타입을 정의할 수 있다. 아래와 같은 방식으로 콜론(:)을 이용하여 타입을 정의하는
-          방식을 타입표기(Type Annotation)라고 한다.
-        </div>
-        <div className={`${styles.card_date}`}>2024.01.01</div>
+        <Link href={`/blog/${id}`}>
+          {tags.length > 0 && (
+            <div className={`${styles.cart_tags}`}>
+              {tags?.map((tag, i) => {
+                return <span key={i}>{tag}</span>;
+              })}
+            </div>
+          )}
+          <div className={`${styles.card_title}`}>{title}</div>
+          <div className={`${styles.card_text}`}>{description}</div>
+          <div className={`${styles.card_date}`}>
+            <FiCalendar stroke="#999" />
+            {date}
+          </div>
+        </Link>
       </div>
     );
   });
