@@ -10,5 +10,15 @@ export interface PostDataProps {
 
 export interface PostProps {
   id: number;
-  data: PostDataProps;
+  title: string;
+  tags: string[];
+  description: string;
+  date: string;
+}
+
+export interface PostDetailProps {
+  title: string;
+  tags: string[];
+  createDate: string;
+  content: string;
 }

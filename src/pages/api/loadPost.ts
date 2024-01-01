@@ -1,39 +1,51 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { mdToHtmlForDescription } from './markdownToHtml';
-import { PostProps } from '@/_interface/posts';
+import { markdownToText } from './markdownToHtml';
+import { PostDataProps } from '@/_interface/posts';
 
 const BASE_PATH = 'src/_posts';
 const POSTS_DIR = path.join(process.cwd(), BASE_PATH);
 
-export const getPostBySlug = (slug: string) => {
-  const id = slug.replace(/\.md$/, '');
-  const filePath = path.join(POSTS_DIR, slug);
-  const fileContents = fs.readFileSync(filePath, 'utf-8');
+export const getPostDetailData = async (postId: string) => {
+  const file = fs.readFileSync(`${POSTS_DIR}/${postId}.md`, 'utf-8');
 
-  const { data, content } = matter(fileContents);
+  const {
+    data: { title, tags, createDate },
+    content
+  } = matter(file);
+
+  // const post = await markdownToHtml(content || '');
 
   return {
-    id,
-    data,
-    content
+    title,
+    tags,
+    date: createDate,
+    content: content
   };
 };
 
-export const getAllPosts = () => {
-  const slugs = fs.readdirSync(POSTS_DIR);
-  const getPostsData = slugs.map((slug) => {
-    const { id, data, content } = getPostBySlug(slug);
-    console.log('data', data);
-    const convertContent = mdToHtmlForDescription(content || '');
+export const getAllPostData = () => {
+  const files = fs.readdirSync(POSTS_DIR);
+  const getPostsData = files.map((file) => {
+    const id = file.replace(/\.md$/, '');
+    const filePath = path.join(POSTS_DIR, file);
+    const fileContents = fs.readFileSync(filePath, 'utf-8');
+
+    const {
+      data: { title, tags, createDate },
+      content
+    } = matter(fileContents);
+    const description = markdownToText(content || '');
+
     return {
       id,
-      data: {
-        ...(data as PostProps),
-        description: convertContent
-      }
+      tags,
+      title,
+      description,
+      date: createDate
     };
   });
-  return getPostsData.sort((a, b) => (a.data < b.data ? -1 : 1));
+
+  return getPostsData.sort((a, b) => (a.date > b.date ? -1 : 1));
 };
