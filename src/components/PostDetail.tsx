@@ -8,7 +8,6 @@ import styles from '@/styles/Component.module.scss';
 
 const PostDetail = ({ data }: { data: PostDetailProps }) => {
   const { title, tags, date, content } = data;
-  console.log('data', data);
   return (
     <>
       <div className={styles['post-header']}>
