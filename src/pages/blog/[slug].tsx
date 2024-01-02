@@ -1,7 +1,7 @@
 import PostDetail from '../../components/PostDetail';
 import { getAllPostData, getPostDetailData } from '../api/loadPost';
 import { useParams } from 'next/navigation';
-import { PostDetailProps } from '../_interface/posts';
+import { PostDetailProps } from '@/_interface/posts';
 
 const BlogDetailPage = ({ post }: { post: PostDetailProps }) => {
   return <>{<PostDetail data={post} />}</>;
