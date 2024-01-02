@@ -1,14 +1,14 @@
 /** @type {import('next').NextConfig} */
 
+const isProd = process.env.NODE_ENV === 'production';
 const path = require('path');
 
 const nextConfig = {
-  output: 'standalone',
-  experimental: {
-    // this includes files from the monorepo base two directories up
-    outputFileTracingRoot: path.join(__dirname, '../../')
-  },
-  reactStrictMode: true,
+  output: 'export',
+  // experimental: {
+  //   // this includes files from the monorepo base two directories up
+  //   outputFileTracingRoot: path.join(__dirname, '../../')
+  // },
   images: {
     unoptimized: true
   },
@@ -17,7 +17,10 @@ const nextConfig = {
     config.resolve.fallback = { fs: false };
 
     return config;
-  }
+  },
+
+  distDir: 'build',
+  reactStrictMode: true
 };
 
 module.exports = nextConfig;
