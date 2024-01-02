@@ -19,6 +19,6 @@ export interface PostProps {
 export interface PostDetailProps {
   title: string;
   tags: string[];
-  createDate: string;
+  date: string;
   content: string;
 }
