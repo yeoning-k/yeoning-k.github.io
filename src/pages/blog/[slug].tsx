@@ -1,9 +1,10 @@
-import BlogDetail from '../../components/BlogDetail';
+import PostDetail from '../../components/PostDetail';
 import { getAllPostData, getPostDetailData } from '../api/loadPost';
 import { useParams } from 'next/navigation';
+import { PostDetailProps } from '../_interface/posts';
 
-const BlogDetailPage = ({ post }: { post: string }) => {
-  return <>{<BlogDetail data={post} />}</>;
+const BlogDetailPage = ({ post }: { post: PostDetailProps }) => {
+  return <>{<PostDetail data={post} />}</>;
 };
 
 export const getStaticPaths = async () => {

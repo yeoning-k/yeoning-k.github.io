@@ -3,7 +3,7 @@ import styles from '@/styles/Component.module.scss';
 import Link from 'next/link';
 import { FiCalendar } from 'react-icons/fi';
 
-const BlogList = ({ posts }: { posts: PostProps[] }) => {
+const PostItems = ({ posts }: { posts: PostProps[] }) => {
   return posts?.map((item, idx) => {
     const { id, title, tags, description, date } = item;
 
@@ -11,15 +11,15 @@ const BlogList = ({ posts }: { posts: PostProps[] }) => {
       <div className={`mt-10 mb-10 ${styles.card}`} key={idx}>
         <Link href={`/blog/${id}`}>
           {tags.length > 0 && (
-            <div className={`${styles.cart_tags}`}>
+            <ul className={styles.card__tags}>
               {tags?.map((tag, i) => {
-                return <span key={i}>{tag}</span>;
+                return <li key={i}>{tag}</li>;
               })}
-            </div>
+            </ul>
           )}
-          <div className={`${styles.card_title}`}>{title}</div>
-          <div className={`${styles.card_text}`}>{description}</div>
-          <div className={`${styles.card_date}`}>
+          <div className={`${styles.card__title}`}>{title}</div>
+          <div className={`${styles.card__text}`}>{description}</div>
+          <div className={`${styles.card__date}`}>
             <FiCalendar stroke="#999" />
             {date}
           </div>
@@ -29,4 +29,4 @@ const BlogList = ({ posts }: { posts: PostProps[] }) => {
   });
 };
 
-export default BlogList;
+export default PostItems;
