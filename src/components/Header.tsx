@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Roboto_Mono } from 'next/font/google';
-import { FiFile, FiFolder, FiUser, FiSun, FiMoon } from 'react-icons/fi';
+import { FiFile, FiFolder, FiUser, FiSun, FiMoon, FiGithub } from 'react-icons/fi';
 
 const roboto = Roboto_Mono({ subsets: ['latin'], weight: ['700'] });
 
@@ -48,7 +48,14 @@ export default function Header() {
           );
         })}
       </div>
-      <div className="header__theme">{/* <BsSun className="header__theme-btn" /> */}</div>
+      <div className="header__utils">
+        <div className="button button__theme">
+          <FiSun />
+        </div>
+        <Link href="/" className="button button__link">
+          <FiGithub />
+        </Link>
+      </div>
     </header>
   );
 }
