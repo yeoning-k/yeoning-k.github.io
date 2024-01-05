@@ -1,10 +1,20 @@
-import PostDetail from '../../components/PostDetail';
-import { getAllPostData, getPostDetailData } from '../api/loadPost';
-import { useParams } from 'next/navigation';
+import PostDetail from '@/components/PostDetail';
+import UtterancesComments from '@/components/UtterancesComments';
+import { getAllPostData, getPostDetailData } from '@/pages/api/loadPost';
 import { PostDetailProps } from '@/_interface/posts';
+import styles from '@/styles/Component.module.scss';
 
 const BlogDetailPage = ({ post }: { post: PostDetailProps }) => {
-  return <>{<PostDetail data={post} />}</>;
+  return (
+    <>
+      <div className="contents">
+        <PostDetail data={post} />
+      </div>
+      <div className={`contents ${styles['post-body']}`}>
+        <UtterancesComments />
+      </div>
+    </>
+  );
 };
 
 export const getStaticPaths = async () => {

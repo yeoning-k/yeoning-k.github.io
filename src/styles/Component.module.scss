@@ -20,6 +20,16 @@
   }
 }
 
+.post-body {
+  padding: 50px;
+  background-color: var(--convers-color);
+  border-radius: var(--border-radius);
+
+  .utterances {
+    max-width: 100% !important;
+  }
+}
+
 .card {
   padding: 20px;
   background: #fff;
