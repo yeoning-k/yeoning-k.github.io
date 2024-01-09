@@ -682,6 +682,11 @@ chokidar@^3.5.3, "chokidar@>=3.0.0 <4.0.0":
   optionalDependencies:
     fsevents "~2.3.2"
 
+classnames@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.npmjs.org/classnames/-/classnames-2.5.1.tgz"
+  integrity sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==
+
 client-only@0.0.1:
   version "0.0.1"
   resolved "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
@@ -1071,6 +1076,11 @@ eslint-plugin-jsx-a11y@^6.7.1:
   version "4.6.0"
   resolved "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.6.0.tgz"
   integrity sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==
+
+eslint-plugin-react-hooks@^5.0.0-canary-f1039be4a-20240107:
+  version "5.0.0-canary-f1039be4a-20240107"
+  resolved "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-5.0.0-canary-f1039be4a-20240107.tgz"
+  integrity sha512-kCvHZmBPt5jv2uejEm7PRH/fgxzy7IkDVwEAIRnbyXneZZd101dfEDcVHWMIZsgpE2HLRsmIPFERcr6RVg8Kcw==
 
 eslint-plugin-react@^7.33.2:
   version "7.33.2"
