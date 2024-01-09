@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import { getAllPostData } from './api/loadPost';
 import PostItems from '@/components/PostItems';
@@ -48,8 +47,8 @@ export const getStaticProps = () => {
   const allPostsData = getAllPostData('post');
   const allProjectData = getAllPostData('project');
 
-  const posts = JSON.stringify(allPostsData);
-  const project = JSON.stringify(allProjectData);
+  const posts = JSON.stringify(allPostsData?.slice(0, 3));
+  const project = JSON.stringify(allProjectData?.slice(0, 4));
   return {
     props: { posts, project }
   };
