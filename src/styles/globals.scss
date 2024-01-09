@@ -152,7 +152,6 @@ a {
     }
   }
 }
-/* ===== //COMMON LAYOUT ===== */
 
 .utterances {
   max-width: 100% !important;
@@ -165,10 +164,59 @@ a {
   border-radius: var(--border-radius);
   text-align: center;
 }
+/* ===== //COMMON LAYOUT ===== */
 
+/* ===== FOOTER ===== */
 .footer {
   padding: 20px 0;
   font-size: 12px;
   text-align: center;
   color: var(--ft-color1);
 }
+/* ===== //FOOTER ===== */
+
+/* ===== 404 PAGE ===== */
+.page404 {
+  text-align: center;
+
+  .page404__wrap {
+    position: relative;
+    top: 100px;
+
+    .emoji {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      font-size: 180px;
+    }
+
+    h3 {
+      margin-bottom: 50px;
+      font-size: 180px;
+      color: var(--base-font-color);
+    }
+    .title {
+      margin-bottom: 15px;
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--base-font-color);
+    }
+    .text {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 24px;
+      color: var(--ft-color1);
+    }
+    .btn__go-to-Home {
+      margin-top: 50px;
+      display: inline-block;
+      width: 180px;
+      height: 50px;
+      line-height: 50px;
+      border-radius: 50px;
+      background: var(--bg-color2);
+      color: var(--ft-color4);
+    }
+  }
+}
+/* ===== //404 PAGE ===== */
