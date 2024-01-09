@@ -16,6 +16,7 @@ const UtterancesComments = () => {
 
         elem.replaceChildren(scriptElem);
       }}
+      style={{ marginTop: '14px' }}
     />
   );
 };
